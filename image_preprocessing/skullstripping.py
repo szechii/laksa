@@ -25,8 +25,7 @@ class skullstrip():
     '''
     def __init__(self, img_path):
 
-        assert os.path.exists(img_path), \
-        print ('Error: img_path does not exist.')
+        assert os.path.exists(img_path), 'Error: img_path does not exist.'
 
         self.img_path = img_path
 

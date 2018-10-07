@@ -59,12 +59,11 @@ class vesselsegmentation():
     '''
     def __init__(self, img_path, save_path):
 
-        assert os.path.exists(img_path), \
-        print ('Error: img_path does not exist.')
+        assert os.path.exists(img_path), 'Error: img_path does not exist.'
         assert os.path.exists(os.path.dirname(save_path)), \
-        print ('Error: parent directory of img_path does not exist.')
+        'Error: parent directory of img_path does not exist.'
         assert save_path[-7:] == '.nii.gz' or save_path[-4:] == '.nii', \
-        print ('Error: save_path is not *.nii.gz or *.nii.')
+        'Error: save_path is not *.nii.gz or *.nii.'
 
         self.img_path = img_path
         self.save_path = save_path
