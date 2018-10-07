@@ -26,13 +26,13 @@ def write_tfrecords(float_arr, int_arr, save_dir):
     Output Args:    None
     '''
     assert float_arr.dtype == np.float32, \
-    print ('Error: float_arr is not a float32 np.array.')
+    'Error: float_arr is not a float32 np.array.'
     assert int_arr.dtype == np.int32, \
-    print ('Error: int_arr is not a int32 np.array.')
+    'Error: int_arr is not a int32 np.array.'
     assert save_dir[-3:] == '.tf' or save_dir[-10:] == '.tfrecords', \
-    print ('Error: save_dir is not a .tfrecords or .tf file.')
+    'Error: save_dir is not a .tfrecords or .tf file.'
     assert os.path.exists(os.path.dirname(save_dir)), \
-    print ('Error: parent directory of save_dir does not exist.')
+    'Error: parent directory of save_dir does not exist.'
 
     writer = tf.python_io.TFRecordWriter(save_dir)
     print('writing: '+save_dir)
@@ -62,7 +62,7 @@ def read_tfrecords(tfrecord_dir, data_shape):
     '''
 
     assert os.path.exists(tfrecord_dir), \
-    print ('Error: tfrecord_dir does not exist.')
+    'Error: tfrecord_dir does not exist.'
 
     record_iterator = tf.python_io.tf_record_iterator(path=tfrecord_dir)
     for string_record in record_iterator:

@@ -23,11 +23,11 @@ def obtainPatchAndPosition(X_ph, cube_size):
     buffer = 2 # added to avoid making a cube out of bounds from the volume array
 
     assert len(X_ph.shape) == 5, \
-    print ('Error: X_ph is not of shape [None, D, H, W, C].')
+    'Error: X_ph is not of shape [None, D, H, W, C].'
     assert type(cube_size) == int, \
-    print ('Error: cube_size is not an integer.')
+    'Error: cube_size is not an integer.'
     assert X_ph.shape[1].value-cube_size-buffer > 0, \
-    print ('Error: Volume array is smaller than cube size.')
+    'Error: Volume array is smaller than cube size.'
 
     start_z = tf.range(cube_size//2, X_ph.shape[1].value-cube_size-buffer, cube_size//2)
     start_y = tf.range(0, X_ph.shape[2].value-cube_size+1, cube_size//2)
